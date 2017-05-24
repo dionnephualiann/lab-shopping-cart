@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+     var arraySubTotal = [];
+
 // Subtotal
 //event listener .on set on .rows
 	$('.row').on('change', function(e){
@@ -20,11 +22,14 @@ $(document).ready(function() {
 
 		console.log(getSubTotal);
 
+		arraySubTotal.push(subTotal);
+
+
 	});
 
 
 // create item
-    var createItem= function(){
+    var createItem = document.createItem = function(){
 
 // get input value
 		var ingredientRow = $('#ingBox').val();
@@ -52,24 +57,47 @@ $(document).ready(function() {
               <div class="subtotal">\
                      $0.00\
               </div>\
-            </div>\   
+            </div>\
         </div>'
         
 //push line
-    	$(newLine).insertAfter( '.item-list');
-        console.log(newLinePush);
+    	$('.item-list').append(newLine);
+        
 	};
 
+
+
+//  Total Sum
+     
+         $('#sum').on('click', function(){
+         	var getTotal = function(){
+	        	return arraySubTotal.reduce(function(a, b){
+	        		return a+b;
+	        	},0);
+	    	}
+
+	    $('#total-sum').text('$' + getTotal());
+	});
+
+// cancel function
+  var remove = document.remove = $('.remove').on('click', function(e){
+	        var productRow = $(e.target).parents('.row');
+		 	var message= '<div class ="blue"></div>';
+			$(productRow).find('.row').append(message)
+	
+
+			setTimeout(
+				function()
+				{
+					$(productRow).remove();
+				}, 500);
+		});
+      
 });
 
-// // Total Sum
- 
-//         var arraySubTotal = arraySubTotal.push(getSubTotal);
 
-//         var getTotal = function(){
-//         	for( var i = 0; i < arraySubTotal.length; i++);
 
-//         }
+
 
 
 
