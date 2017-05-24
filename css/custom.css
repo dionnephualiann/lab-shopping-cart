@@ -1,0 +1,55 @@
+div h1 {
+	margin: 20px 20px 20px 0;
+}
+
+h4 {
+    width: 50px;
+    display: inline;
+}
+
+.quantity input{
+	margin-left: 5px;
+
+}
+
+.ingredients {
+	padding: 15px;
+}
+
+.price {
+	padding: 15px;
+}
+
+.quantity {
+	padding: 15px;
+}
+
+.subtotal {
+	padding: 15px;
+}
+
+.inputPriceBox{
+	
+	display: inline;
+}
+
+.inputIngBox {
+	display: inline-block;
+}
+
+.create-button {
+	margin: 0;
+	width: 50%;
+	display: inline;
+}
+
+#create-line {
+	display: inline;
+	margin-left: 50px;
+}
+
+#sum p a{
+	margin-top: 40px;
+	background-color: #22aa00;
+	border-color: green;
+}
